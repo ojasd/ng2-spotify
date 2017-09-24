@@ -1,16 +1,23 @@
+import { SpotifyService } from './webservices/spotify.service';
+import { AppRoutes } from './app.routes';
+import { OverviewComponent } from './overview/overview.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OverviewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutes,
+    HttpModule
   ],
-  providers: [],
+  providers: [ SpotifyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
